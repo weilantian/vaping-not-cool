@@ -95,30 +95,32 @@ const ProgressBar = () => {
 const Item = ({ selected, hovered, title, description, href }) => {
   const router = useRouter();
   return (
-    <Link href={href}>
-      <a href="#">
-        <motion.h3
-          initial={{ fontSize: "1rem" }}
-          animate={{
-            fontSize: hovered ? "1.2rem" : "1rem",
-          }}
-          className={`tracking-widest w-[200ox] ${
-            router.pathname === href
-              ? "opacity-100 text-blue-200"
-              : "opacity-75"
-          }  uppercase`}
-        >
-          {title}
-        </motion.h3>
-        <p
-          className={`uppercase text-sm w-[180px] ${
-            router.pathname === href ? "opacity-100" : "opacity-70"
-          }  `}
-        >
-          {description}
-        </p>
-      </a>
-    </Link>
+    <a
+      onClick={() => {
+        if (router.pathname === href) return;
+        router.push(href);
+      }}
+      href="#"
+    >
+      <motion.h3
+        initial={{ fontSize: "1rem" }}
+        animate={{
+          fontSize: hovered ? "1.2rem" : "1rem",
+        }}
+        className={`tracking-widest w-[200ox] ${
+          router.pathname === href ? "opacity-100 text-blue-200" : "opacity-75"
+        }  uppercase`}
+      >
+        {title}
+      </motion.h3>
+      <p
+        className={`uppercase text-sm w-[180px] ${
+          router.pathname === href ? "opacity-100" : "opacity-70"
+        }  `}
+      >
+        {description}
+      </p>
+    </a>
   );
 };
 

@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const ChemicalCard = ({
   color,
   name,
@@ -5,9 +7,15 @@ const ChemicalCard = ({
   imageSrc,
   type,
   causing,
+  delay,
 }) => {
   return (
-    <div className="border w-[400px]  border-blue-200">
+    <motion.div
+      transition={{ delay }}
+      initial={{ opacity: 0, y: 120 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="border w-[400px]  border-blue-200"
+    >
       <div className=" uppercase tracking-widest border border-blue-200 py-2 px-4 text-blue-200">
         {type}
       </div>
@@ -24,7 +32,7 @@ const ChemicalCard = ({
           </>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

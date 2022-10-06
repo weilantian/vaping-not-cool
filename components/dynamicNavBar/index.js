@@ -26,13 +26,13 @@ const DynamicNavBar = () => {
           <Item
             hovered={hovered}
             description="how is vaping a bad thing"
-            title="what’s inside a e-cigarette"
+            title="Chemicals"
             href="/inside"
           />
           <Item
             hovered={hovered}
             description="how vaping impact your health"
-            title="harmfulness"
+            title="Lung"
             href="/harmfulness"
           />
           <Item

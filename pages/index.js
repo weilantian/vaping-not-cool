@@ -15,7 +15,18 @@ export default function Home() {
           transition={{ duration: 1, type: "tween" }}
           className=" uppercase text-blue-200 font-light text-center tracking-widest w-[460px] text-7xl"
         >
-          vaping is not cool.
+          vaping is
+        </motion.h1>
+      </div>
+
+      <div className=" overflow-hidden">
+        <motion.h1
+          initial={{ y: "-100%" }}
+          animate={{ y: 0 }}
+          transition={{ duration: 1, type: "tween" }}
+          className="uppercase text-blue-200 font-light text-center tracking-widest w-[460px] text-7xl"
+        >
+          not cool.
         </motion.h1>
       </div>
 

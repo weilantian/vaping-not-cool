@@ -30,6 +30,9 @@ function MagicCamera() {
     <>
       <perspectiveCamera ref={cameraRef} position={[0, -10, 10]} />
       <OrbitControls
+        autoRotate
+        enableZoom={false}
+        autoRotateSpeed={0.5}
         enableDamping
         ref={controlsRef}
         args={[camera, gl.domElement]}

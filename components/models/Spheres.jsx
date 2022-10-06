@@ -10,7 +10,7 @@ function Spheres({ columns, rows, spread }) {
       mass: 1,
       position: [
         ((index % columns) - (columns - 1) / 2) * spread,
-        2.0,
+        8,
         (Math.floor(index / columns) - (rows - 1) / 2) * spread,
       ],
     }),

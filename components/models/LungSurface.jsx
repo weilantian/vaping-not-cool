@@ -3,6 +3,7 @@ import { useRef, useEffect } from "react";
 import { Color, Float32BufferAttribute } from "three";
 import niceColors from "nice-color-palettes";
 import { useFrame } from "@react-three/fiber";
+import { Html } from "@react-three/drei";
 export function generateHeightmap({ width, height, number, scale }) {
   const data = [];
 

@@ -4,7 +4,7 @@ import ChemicalCard from "../chemicalCard";
 import { motion } from "framer-motion-3d";
 import { motion as animator } from "framer-motion";
 import { useControls } from "leva";
-const VaperModel = (props) => {
+const VaperModel = ({ selected, setSelected, ...props }) => {
   const { nodes, materials } = useGLTF(
     "/models/vaper-with-bilboards-test2.glb"
   );
@@ -133,43 +133,46 @@ const VaperModel = (props) => {
             transform
           >
             <ChemicalCard
+              selected={selected === "voc"}
+              onClick={() => setSelected("voc")}
               delay={3}
-              type="Volatile compounds"
+              type="VOC"
               name="Volatile organic compounds"
-              description="Volatile organic compounds are organic chemicals that have a high vapour pressure at room temperature."
-              causing="Exposure to VOCs themselves can cause a variety of health effects, including irritation to the eyes, nose, and throat; headaches and the loss of coordination; nausea; and damage to the liver, kidneys, or central nervous system. Some VOCs are suspected or proven carcinogens."
+              imageSrc="/images/voc.jpg"
             />
           </Html>
 
           <Html
             rotation-z={Math.PI * 1.5}
-            rotation-x={Math.PI * 0.5 + radius}
+            rotation-x={Math.PI * 1.5 + radius}
             occlude
             position={[2, 8, 0]}
             transform
           >
             <ChemicalCard
+              selected={selected === "ultra"}
+              onClick={() => setSelected("ultra")}
+              imageSrc="/images/ultra.png"
               delay={3.2}
-              type="Volatile compounds"
-              name="Volatile organic compounds"
-              description="Volatile organic compounds are organic chemicals that have a high vapour pressure at room temperature."
-              causing="Exposure to VOCs themselves can cause a variety of health effects, including irritation to the eyes, nose, and throat; headaches and the loss of coordination; nausea; and damage to the liver, kidneys, or central nervous system. Some VOCs are suspected or proven carcinogens."
+              type="PARTICLES"
+              name="Ultrafine particles"
             />
           </Html>
 
           <Html
             rotation-z={Math.PI * 1.5}
             occlude
-            rotation-x={radius}
+            rotation-x={radius + Math.PI}
             position={[2, 0, -8]}
             transform
           >
             <ChemicalCard
+              selected={selected === "flavorings"}
+              onClick={() => setSelected("flavorings")}
+              imageSrc="/images/flavorings.jpg"
               delay={3.4}
-              type="Volatile compounds"
-              name="Volatile organic compounds"
-              description="Volatile organic compounds are organic chemicals that have a high vapour pressure at room temperature."
-              causing="Exposure to VOCs themselves can cause a variety of health effects, including irritation to the eyes, nose, and throat; headaches and the loss of coordination; nausea; and damage to the liver, kidneys, or central nervous system. Some VOCs are suspected or proven carcinogens."
+              type="ADDICTIVE"
+              name="Flavorings"
             />
           </Html>
 
@@ -180,11 +183,12 @@ const VaperModel = (props) => {
             transform
           >
             <ChemicalCard
+              selected={selected === "nicotine"}
+              onClick={() => setSelected("nicotine")}
+              imageSrc="/images/nicotine.png"
               delay={3.5}
-              type="Volatile compounds"
-              name="Volatile organic compounds"
-              description="Volatile organic compounds are organic chemicals that have a high vapour pressure at room temperature."
-              causing="Exposure to VOCs themselves can cause a variety of health effects, including irritation to the eyes, nose, and throat; headaches and the loss of coordination; nausea; and damage to the liver, kidneys, or central nervous system. Some VOCs are suspected or proven carcinogens."
+              type="CHEMICAL"
+              name="Nicotine"
             />
           </Html>
         </mesh>

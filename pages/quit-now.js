@@ -10,7 +10,6 @@ const Plane = (props) => {
   return (
     <mesh ref={ref} receiveShadow>
       <planeBufferGeometry args={[10, 10]} />
-      <meshReflectorMaterial />
       <shadowMaterial color="#727883" />
     </mesh>
   );

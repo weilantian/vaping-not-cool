@@ -38,7 +38,7 @@ const DynamicNavBar = () => {
           <Item
             hovered={hovered}
             description="quit vaping today, help with you and others."
-            title="quit now"
+            title="quit"
             href="/quit-now"
           />
         </motion.div>
@@ -65,7 +65,9 @@ const DynamicNavBar = () => {
             onClick={() => {
               router.push(routeLookUp(router.pathname, 1));
             }}
-            className=" flex hover:opacity-75 justify-center items-center rounded-full w-8 h-8 bg-white bg-opacity-20"
+            className={` ${
+              router.pathname === "/quit-now" ? "" : " animate-pulse"
+            } flex hover:opacity-75 justify-center items-center rounded-full w-8 h-8 bg-white bg-opacity-20`}
           >
             <IoChevronForward />
           </button>

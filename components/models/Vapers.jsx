@@ -1,19 +1,5 @@
 import { useGLTF } from "@react-three/drei";
 import { useBox } from "@react-three/cannon";
-import { useMemo, useRef } from "react";
-import { Geometry } from "three-stdlib/deprecated/Geometry";
-
-function toConvexProps(bufferGeometry) {
-  const geo = new Geometry().fromBufferGeometry(bufferGeometry);
-  // Merge duplicate vertices resulting from glTF export.
-  // Cannon assumes contiguous, closed meshes to work
-  geo.mergeVertices();
-  return [
-    geo.vertices.map((v) => [v.x, v.y, v.z]),
-    geo.faces.map((f) => [f.a, f.b, f.c]),
-    [],
-  ];
-}
 
 const BasicVaper = ({ position, rotation }) => {
   const { nodes, materials } = useGLTF(

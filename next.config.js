@@ -1,4 +1,4 @@
-const withTIM = require("next-transpile-modules")(["three"]);
+// const withTIM = require("next-transpile-modules")(["three"]);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -6,4 +6,4 @@ const nextConfig = {
   swcMinify: true,
 };
 
-module.exports = withTIM(nextConfig);
+module.exports = nextConfig;
